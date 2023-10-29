@@ -1,0 +1,170 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        pet guardian
+    </title>
+    <link rel="stylesheet" type="text/css" href="navstyle.css">
+<style>
+.accordion{
+  background-color: #f5f5f5;
+  color: #333;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 16px;
+  transition: 0.4s;
+}
+
+.accordion:hover{
+    background-color: aquamarine;
+}
+
+
+.panel {
+  display: none;
+  padding: 0 18px;
+  background-color: white;
+  overflow: hidden;
+}
+.p1{
+    font-weight: bold;
+    font-style: italic;
+    font-size:large;
+
+}
+
+ #animated-element {
+            width: 400px;
+            height: 70px;
+            background-color: rgb(153, 172, 16);
+            position: relative;
+        }
+
+        .h1{
+            position: absolute;
+            font-size:28;
+            width: 100%;
+            text-align: center;
+            font-weight: bolder;
+
+
+        }
+    </style>
+</head>
+
+<body>
+   
+</style>
+</head>
+<body>
+    <ul class="navbar">
+        <li><a href="home.htm">Home</a></li>
+          <li>  <a href="page 2.htm"> About NGOs</a></li>
+           <li> <a href="story layout.htm">Rescue Stories</a></li>
+          <li>  <a href="faqs.htm">FAQs </a></li>
+    </ul>
+    <br>
+    <div id="animated-element">
+        <div class="h1">FREQUENTLY ASKED QUESTIONS:</div>
+    </div>
+    <br>
+    <button onclick="startAnimation()"> click me! </button>
+    <br>
+    
+    
+    <script>
+        function startAnimation() {
+            const element = document.getElementById("animated-element");
+            let position = 0;
+            
+            const animationInterval = setInterval(function () {
+                if (position >= 200) {
+                    clearInterval(animationInterval);
+                } else {
+                    position += 5; // Change the position
+                    element.style.left = position + 'px'; // Update the left position
+                }
+            }, 16); // 60 frames per second
+        }
+        
+    </script>
+
+
+
+<button class="accordion">What is animal welfare?
+ </button>
+<div class="panel">
+  <p>
+    <p class="p1">Answer:</p> Animal welfare refers to the well-being of animals, encompassing their physical, mental, and emotional health. It involves ensuring that animals are treated with care and respect.
+ </p>
+</div>
+
+<button class="accordion">Why is animal welfare important?</button>
+<div class="panel">
+  <p>  <p class="p1">Answer:</p> Animal welfare is important because it reflects our ethical responsibility to treat animals with kindness and prevent unnecessary suffering. It also contributes to the overall health of ecosystems and the well-being of humans.
+
+  </p>
+</div>
+
+<button class="accordion">How can I support animal welfare?</button>
+<div class="panel">
+  <p>  <p class="p1">Answer:</p>You can support animal welfare by adopting pets from shelters, donating to animal rescue organizations, volunteering your time, and advocating for animal rights.
+
+  </p>
+</div>
+
+<button class="accordion">What should I do if I find a stray animal?</button>
+<div class="panel">
+  <p>  <p class="p1">Answer:</p>If you find a stray animal, contact your local animal control or a nearby animal shelter. Ensure the animal's safety and provide food and water if it's safe to do so.
+</p>
+</div>
+
+<button class="accordion">How can I report animal abuse or neglect?</button>
+<div class="panel">
+  <p>  <p class="p1">Answer:</p>If you suspect animal abuse or neglect, contact your local law enforcement or animal control agency. Provide them with as much information as possible.
+
+  </p>
+</div>
+
+<button class="accordion">Is it better to buy or adopt a pet?</button>
+<div class="panel">
+  <p>  <p class="p1">Answer:</p> Adoption is a humane option, as it provides a home to animals in need. Buying from responsible breeders can also be a choice, but it's essential to ensure they prioritize animal welfare.
+</p>
+</div>
+
+<button class="accordion">What are some signs of a healthy pet?</button>
+<div class="panel">
+  <p>  <p class="p1">Answer:</p>A healthy pet should have a shiny coat, clear eyes, and be alert and active. Regular veterinary check-ups are vital for maintaining their health.
+</p>
+</div>
+
+
+
+
+<script>
+// JavaScript to toggle the accordion effect
+var accordions = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < accordions.length; i++) {
+  accordions[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
+
+
+
+
+</body>
+</html>

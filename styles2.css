@@ -1,0 +1,75 @@
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0; /* Off-screen initially */
+    background-color: #333;
+    padding-top: 20px;
+    transition: 0.5s; /* Add a transition for smooth animation */
+    overflow-x: hidden;
+    z-index: 1;
+}
+
+.sidenav a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    display: block;
+    transition:0.3s
+}
+
+.sidenav a:hover {
+    background-color: #555;
+}
+
+/* Style the button to open the navigation */
+.open-nav {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+/* Define a class to show the navigation */
+.show-nav {
+    width: 250px;
+    left: 0;
+}
+
+/* Animate the button to close the navigation */
+.open-nav.active {
+    left: 260px;
+}
+
+/* Style the main content area to shift it to the right */
+.main-content {
+    margin-left: 0;
+    padding: 20px;
+    transition: 0.5s; /* Add a transition to adjust the margin */
+}
+
+/* Adjust the main content when the navigation is open */
+.show-nav + .main-content {
+    margin-left: 250px;
+    transition: 0.5s;
+}
+
+
+JavaScript (for button click functionality):
+javascript
+document.querySelector('.open-nav').addEventListener('click', function () {
+    var sidenav = document.querySelector('.sidenav');
+    var openNav = document.querySelector('.open-nav');
+    var mainContent = document.querySelector('.main-content');
+
+    if (sidenav.classList.contains('show-nav')) {
+        sidenav.classList.remove('show-nav');
+        openNav.classList.remove('active');
+        mainContent.style.marginLeft = '0';
+    } else {
+        sidenav.classList.add('show-nav');
+        openNav.classList.add('active');
+        mainContent.style.marginLeft = '250px';
+    }
+});
